@@ -1,4 +1,6 @@
 import Image from "next/image";
+import PokeStats from "./PokeStats";
+import PokeTypes from "./PokeTypes";
 
 export default function PokeDetails({pokemon}:any){
     
@@ -19,16 +21,18 @@ export default function PokeDetails({pokemon}:any){
                     height={100}
                     className="p-4 mx-auto hover:animate-bounce delay-1000"
                 />
+                
+            </div>
+            <div className="w-1/2 flex items-stretch mx-auto text-center p-4 px-6">
+                <h3 className="font-semibold mx-2">Weight: {pokemon.weight}</h3>
+                <h3 className="font-semibold mx-2">Height: {pokemon.height}</h3>
+            </div>
+            <div>
+                <PokeTypes types={pokemon.types}/>
             </div>
             <div>
                 <h2 className="text-xl text-center my-3">Stats</h2>
-                <li>HP: {pokemon.stats[0].base_stat}</li>
-                <li>ATK: {pokemon.stats[1].base_stat}</li>
-                <li>DEF: {pokemon.stats[2].base_stat}</li>
-                <li>Spl. ATK: {pokemon.stats[3].base_stat}</li>
-                <li>Spl. DEF: {pokemon.stats[4].base_stat}</li>
-                <li>SPD: {pokemon.stats[5].base_stat}</li>
-
+                <PokeStats stats={pokemon.stats}/>
             </div>
         </div>
     )
