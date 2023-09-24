@@ -14,7 +14,7 @@ export default function PokeStats({stats}:PokeStatsProps){
         <div className="p-2 mx-auto" style={{width: '500px'}}>
             
             <ul className="list-none flex-col">
-                <h2 className="text-center my-4 font-semibold">Base Stat Total: {total}</h2>
+                <h2 className="text-center my-4 font-semibold text-yellow-500">Base Stat Total: {total}</h2>
                 {stats?.map((stat:any)=> {
                     const name = stat.stat.name;
                     const val = stat.base_stat;

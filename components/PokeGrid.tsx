@@ -17,7 +17,7 @@ export default function PokeGrid({pokemonList}:PokeGridProps){
 
     return(
         <> 
-            <h2 className='text-2xl pt-10 py-4 text-center'>-- Search Pokemons --</h2>
+            <h2 className='text-3xl pt-10 py-4 text-center'> Search Pokemons </h2>
             <div className='w-80 mx-auto text-center'>
                 <Input
                     type='text'
