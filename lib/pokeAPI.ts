@@ -3,11 +3,26 @@ import path, { dirname } from "path";
 
 //get list of pokemon
 export async function getPokeList() {
-  const res = await fetch(
-    "http://pokeapi.co/api/v2/pokemon?limit=1000&offset=0"
-  );
-  const data = await res.json();
-  return data.results;
+  try{
+    const files = fs.readdirSync('./lib/pokemons');
+    const pokeArr:any = [];
+    
+    if(files && files.length){
+      files.forEach((file:any)=>{
+        const fileContent = fs.readFileSync(`./lib/pokemons/${file}`, 'utf-8');
+        pokeArr.push(JSON.parse(fileContent));
+      }) 
+      return pokeArr;
+    }
+  }catch(err){
+    const res = await fetch(
+      "http://pokeapi.co/api/v2/pokemon?limit=1000&offset=0"
+    );
+    const data = await res.json();
+    return data.results;
+  }
+  
+  
 }
 
 //get pokemon details for home page
