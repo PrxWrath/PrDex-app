@@ -35,7 +35,7 @@ export default function MoveDetailPanel({move}:MoveDetailsProps){
             <h2 className="text-xl my-4 text-center">Pokemons With Move</h2>
             <div className='mx-auto max-h-80 overflow-y-scroll p-3 grid text-center lg:grid-cols-4 sm:grid-cols-3 gap-1.5' style={{width: '600px'}}>
                 {move.learned_by_pokemon?.map((pokemon:any)=>{
-                    return (<PokeCard name={pokemon.name} key={pokemon.name+"card"}/>)
+                    return (<PokeCard pokemon={pokemon} key={pokemon.name+"card"} img={false} team={false} setTeam={null}/>)
                 })}
 
             </div>

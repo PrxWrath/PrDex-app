@@ -4,10 +4,12 @@ import { Input } from './ui/input';
 import PokeCard from './PokeCard';
 
 interface PokeGridProps {
-    pokemonList:any
+    pokemonList:any,
+    team: boolean,
+    setTeam: any
 }
 
-export default function PokeGrid({pokemonList}:PokeGridProps){
+export default function PokeGrid({pokemonList, team, setTeam}:PokeGridProps){
     const [searchVal, setSearchVal] = useState("");
     
     const filterList = (list:any) => {
@@ -30,9 +32,9 @@ export default function PokeGrid({pokemonList}:PokeGridProps){
                 ></Input>
             </div>
             <h2 className='text-2xl pt-10 py-4 text-center'>-- Explore --</h2>
-            <div className=' max-h-80 overflow-y-scroll p-3 grid text-center lg:grid-cols-4 sm:grid-cols-3 gap-1.5'>
+            <div className='max-h-80 overflow-y-scroll p-3 grid text-center lg:grid-cols-4 sm:grid-cols-3 gap-1.5'>
                 {filteredList?.map((pokemon:any)=>{
-                    return (<PokeCard name={pokemon.name} key={pokemon.name+"card"}/>)
+                    return (<PokeCard pokemon={pokemon} key={pokemon.name+"card"} img={true} team={team} setTeam={setTeam}/>)
                 })}
 
             </div>

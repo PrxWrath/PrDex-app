@@ -16,7 +16,7 @@ export default function AbilityDetailPanel({ability}:AbilityDetailsProps){
             <h2 className="text-xl my-4 text-center">Pokemons With Ability</h2>
             <div className='mx-auto max-h-80 overflow-y-scroll p-3 grid text-center lg:grid-cols-4 sm:grid-cols-3 gap-1.5' style={{width: '600px'}}>
                 {ability.pokemon?.map((pokemon:any)=>{
-                    return (<PokeCard name={pokemon.pokemon.name} key={pokemon.pokemon.name+"card"}/>)
+                    return (<PokeCard pokemon={pokemon.pokemon} key={pokemon.pokemon.name+"card"} img={false} team={false} setTeam={null}/>)
                 })}
 
             </div>
