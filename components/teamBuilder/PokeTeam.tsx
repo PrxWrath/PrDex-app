@@ -73,7 +73,7 @@ export default function PokeTeam({pokemon}:PokeTeamProps){
             </div>:<></>}
             </>
             }
-        <Link href={`/team/builder/${teamNames}`}><Button className="mx-auto">Configure Team</Button></Link>
+        <Link href={`/team/builder/${teamNames}`} className="mt-3"><Button className="mx-auto">Configure Team</Button></Link>
         
         </div>
         <h2 className='text-3xl pt-10 py-2 text-center'> Search Pokemons </h2>
